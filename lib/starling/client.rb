@@ -20,6 +20,10 @@ module Starling
       AccountsResource.new(self)
     end
 
+    def account_holders
+      AccountHoldersResource.new(self)
+    end
+
     def url
       if environment == :sandbox
         BASE_SANDBOX_URL

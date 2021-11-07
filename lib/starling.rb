@@ -14,8 +14,10 @@ module Starling
   autoload :Object, "starling/object"
 
   autoload :AccountsResource, "starling/resources/accounts"
+  autoload :AccountHoldersResource, "starling/resources/account_holders"
 
   autoload :Account, "starling/objects/account"
+  autoload :AccountHolder, "starling/objects/account_holder"
   autoload :Balance, "starling/objects/balance"
 
 end
