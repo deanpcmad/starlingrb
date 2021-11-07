@@ -2,7 +2,7 @@
 
 **This library is a work in progress**
 
-StarlingRB is a Ruby library for intereacting with the Starling Bank API.
+StarlingRB is a Ruby library for interacting with the Starling Bank API.
 
 ## Installation
 
@@ -16,16 +16,17 @@ gem "starlingrb", require: "starling"
 
 ### Set Client Details
 
-Firstly you'll need to set a Client ID, Secret Key and an Access Token.
+Firstly you'll need to set an Access Token.
 
 ```ruby
-@client = Starling::Client.new(client_id: "", secret_key: "", access_token: "")
+@client = Starling::Client.new(access_token: "")
 ```
 
-### Channels
+### Accounts
 
 ```ruby
-@client.channels.get(broadcaster_id: 1)
+@client.accounts.list
+@client.accounts.balance(uid: "account_uid")
 ```
 
 ## Contributing
