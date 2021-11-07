@@ -8,6 +8,7 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
+    dotenv (2.7.6)
     faraday (1.8.0)
       faraday-em_http (~> 1.0)
       faraday-em_synchrony (~> 1.0)
@@ -37,6 +38,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  dotenv
   rake (~> 13.0)
   starlingrb!
 
