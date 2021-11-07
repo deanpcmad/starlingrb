@@ -24,6 +24,10 @@ module Starling
       AccountHoldersResource.new(self)
     end
 
+    def cards
+      CardsResource.new(self)
+    end
+
     def url
       if environment == :sandbox
         BASE_SANDBOX_URL
@@ -37,7 +41,6 @@ module Starling
     def connection
       @connection ||= Faraday.new(url) do |conn|
         conn.request :authorization, :Bearer, access_token
-        conn.headers = { "Client-ID": client_id }
         conn.request :json
 
         conn.response :dates
