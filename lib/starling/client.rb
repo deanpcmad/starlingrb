@@ -3,12 +3,10 @@ module Starling
     BASE_PRODUCTION_URL = "https://api.starlingbank.com/api/v2"
     BASE_SANDBOX_URL = "https://api-sandbox.starlingbank.com/api/v2"
 
-    attr_reader :environment, :client_id, :client_secret, :access_token, :adapter
+    attr_reader :environment, :access_token, :adapter
 
-    def initialize(environment:, client_id:, client_secret:, access_token:, adapter: Faraday.default_adapter, stubs: nil)
+    def initialize(environment:, access_token:, adapter: Faraday.default_adapter, stubs: nil)
       @environment = environment
-      @client_id = client_id
-      @client_secret = client_secret
       @access_token = access_token
       @adapter = adapter
 
