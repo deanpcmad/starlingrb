@@ -26,6 +26,10 @@ module Starling
       CardsResource.new(self)
     end
 
+    def direct_debit_mandates
+      DirectDebitMandatesResource.new(self)
+    end
+
     def url
       if environment == :sandbox
         BASE_SANDBOX_URL

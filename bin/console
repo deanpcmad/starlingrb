@@ -15,9 +15,7 @@ require 'dotenv/load'
 # Pry.start
 
 @client = Starling::Client.new(
-  environment: :sandbox,
-  client_id: ENV["STARLING_CLIENT_ID"],
-  client_secret: ENV["STARLING_CLIENT_SECRET"],
+  environment: :production,
   access_token: ENV["STARLING_ACCESS_TOKEN"]
 )
 

@@ -6,8 +6,8 @@ module Starling
       Collection.from_response(response, type: Account, key: "accounts")
     end
 
-    def balance(account_uid:)
-      Balance.new get_request("accounts/#{account_uid}/balance").body
+    def balance(uid:)
+      Balance.new get_request("accounts/#{uid}/balance").body
     end
     
   end
