@@ -6,23 +6,28 @@ require "faraday_middleware"
 require_relative "starling/version"
 
 module Starling
-  
+
+  autoload :Configuration, "starling/configuration"
   autoload :Client, "starling/client"
   autoload :Collection, "starling/collection"
   autoload :Error, "starling/error"
-  autoload :Resource, "starling/resource"
   autoload :Object, "starling/object"
 
-  autoload :AccountsResource, "starling/resources/accounts"
-  autoload :AccountHoldersResource, "starling/resources/account_holders"
-  autoload :CardsResource, "starling/resources/cards"
-  autoload :DirectDebitMandatesResource, "starling/resources/direct_debit_mandates"
+  class << self
+    attr_writer :config
+  end
 
-  autoload :Account, "starling/objects/account"
-  autoload :AccountHolder, "starling/objects/account_holder"
-  autoload :Balance, "starling/objects/balance"
-  autoload :Card, "starling/objects/card"
-  autoload :DirectDebitMandate, "starling/objects/direct_debit_mandate"
-  autoload :DirectDebitPayment, "starling/objects/direct_debit_payment"
+  def self.configure
+    yield(config) if block_given?
+  end
+
+  def self.config
+    @config ||= Starling::Configuration.new
+  end
+
+  autoload :Account, "starling/models/account"
+
+  # Additional
+  autoload :Balance, "starling/models/balance"
 
 end
