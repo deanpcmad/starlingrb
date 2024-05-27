@@ -1,21 +1,19 @@
 module Starling
   class Collection
-    attr_reader :data, :total, :cursor
+    attr_reader :data, :total
 
     def self.from_response(response, type:, key:)
       body = response.body
 
       new(
         data: body[key].map { |attrs| type.new(attrs) },
-        total: body[key].count,
-        cursor: body.dig("pagination", "cursor")
+        total: body[key].count
       )
     end
 
-    def initialize(data:, total:, cursor:)
+    def initialize(data:, total:)
       @data = data
       @total = total
-      @cursor = cursor.nil? ? nil : cursor
     end
   end
 end
