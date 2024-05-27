@@ -27,6 +27,7 @@ module Starling
 
   autoload :Account, "starling/models/account"
   autoload :Card, "starling/models/card"
+  autoload :Transaction, "starling/models/transaction"
 
   # Additional
   autoload :Balance, "starling/models/balance"

@@ -25,8 +25,15 @@ Firstly you'll need to set an Access Token.
 ### Accounts
 
 ```ruby
-@client.accounts.list
-@client.accounts.balance(uid: "account_uid")
+Starling::Account.list
+Starling::Account.balance(account: "account_uid")
+```
+
+### Transactions
+
+```ruby
+# from and to should be date time stamps
+Starling::Transaction.list(account: "account_uid", from: Date.parse("2023-01-01").to_datetime, to: Date.today.to_datetime)
 ```
 
 ## Contributing
